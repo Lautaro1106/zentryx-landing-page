@@ -19,7 +19,9 @@ export default defineConfig({
   // Configuración de build
   build: {
     // Inline CSS pequeños para mejor performance
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto',
+    // No generar source maps en producción (Mejor seguridad/privacidad)
+    sourcemap: false
   },
 
   vite: {
