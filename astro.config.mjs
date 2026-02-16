@@ -12,17 +12,20 @@ export default defineConfig({
 
   // Configuración del servidor de desarrollo
   server: {
-      port: 4321,
-      host: true
+    port: 4321,
+    host: true
   },
 
   // Configuración de build
   build: {
-      // Inline CSS pequeños para mejor performance
-      inlineStylesheets: 'auto'
+    // Inline CSS pequeños para mejor performance
+    inlineStylesheets: 'auto'
   },
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    preview: {
+      allowedHosts: ['zentryxhub.com.ar']
+    }
   }
 });
