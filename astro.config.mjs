@@ -27,7 +27,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     preview: {
-      allowedHosts: ['zentryxhub.com.ar']
+      allowedHosts: true
     }
   }
 });
