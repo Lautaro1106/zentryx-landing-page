@@ -1,0 +1,32 @@
+---
+const links = [
+  { text: "Qué hago", href: "#enfoque" },
+  { text: "Proyectos", href: "#proyectos" },
+  { text: "Recursos", href: "#lead-magnet" },
+  { text: "Sobre mí", href: "#sobre-mi" },
+];
+---
+
+<header class="fixed top-0 w-full z-50 bg-primary/95 backdrop-blur-sm border-b border-white/5 shadow-2xl">
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 group">
+      <img src="/img/logo-full.png" alt="Zentryx Logo" class="h-10 w-auto group-hover:opacity-80 transition-opacity" />
+    </a>
+    
+    <nav class="hidden md:flex gap-8">
+      {links.map(link => (
+        <a href={link.href} class="text-sm font-medium text-text-muted hover:text-white hover:underline decoration-secondary underline-offset-4 transition-all">
+          {link.text}
+        </a>
+      ))}
+    </nav>
+
+    <a 
+      href="https://wa.me/5491171447433" 
+      class="bg-gradient-to-r from-[#C5A059] to-[#E5C585] text-primary px-6 py-2 rounded-full font-bold text-sm hover:translate-y-[1px] hover:shadow-lg transition-all"
+      target="_blank"
+    >
+      Hablemos
+    </a>
+  </div>
+</header>

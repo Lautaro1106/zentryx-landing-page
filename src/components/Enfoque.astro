@@ -1,0 +1,38 @@
+---
+const pillars = [
+  {
+    title: "Pensamiento de Procesos",
+    description: "No automatizo caos. Primero entendemos qué pasa en tu negocio, simplificamos el flujo y eliminamos cuellos de botella."
+  },
+  {
+    title: "Implementación Técnica",
+    description: "Uso las herramientas adecuadas para cada caso: n8n, Python, bases de datos SQL. Nada de atar todo con alambre."
+  },
+  {
+    title: "Transparencia Operativa",
+    description: "Sabés exactamente qué se está construyendo. Documentación clara y propiedad total de tus sistemas."
+  }
+];
+---
+
+<section id="enfoque" class="py-24 bg-white/5">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl font-bold mb-6">No vendo soluciones mágicas</h2>
+      <p class="text-text-muted text-lg">
+        Mi enfoque es simple: primero entender el negocio, después escribir código. Trabajo junto a un equipo técnico (Zentryx) para asegurar que la ejecución esté a la altura de la estrategia.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {pillars.map(pillar => (
+        <div class="p-8 rounded-xl bg-primary border border-white/5 hover:border-secondary/30 transition-colors">
+          <h3 class="text-xl font-bold mb-4 text-white">{pillar.title}</h3>
+          <p class="text-text-muted leading-relaxed">
+            {pillar.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

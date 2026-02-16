@@ -1,0 +1,96 @@
+---
+// SolutionSection Component - Lo que hace Zentryx
+const solutions = [
+  {
+    title: 'Integramos tus sistemas',
+    description: 'Conectamos tus formularios, tu CRM, tu facturación, tu calendar. La información fluye sola entre sistemas. Sin copiar y pegar.'
+  },
+  {
+    title: 'Automatizamos lo repetitivo',
+    description: 'Envío de certificados, reportes mensuales, recordatorios, seguimientos. Todo lo que hacés manualmente puede hacerse automáticamente.'
+  },
+  {
+    title: 'Ordenamos tus datos',
+    description: 'Toda la información de clientes en un solo lugar. Actualizada. Accesible. Sin buscar en 15 archivos diferentes.'
+  },
+  {
+    title: 'Te damos visibilidad',
+    description: 'Reportes claros que te muestran qué pasa en tu negocio. Clientes nuevos, servicios contratados, pagos pendientes. Todo a la vista.'
+  }
+];
+---
+
+<section class="solutions" id="soluciones">
+  <div class="container">
+    <h2 class="section-title">Qué hace Zentryx por vos</h2>
+    <p class="section-intro">No vendemos un software que tenés que adaptar a tu negocio. Analizamos cómo trabajás hoy y construimos la solución que necesitás para dejar de perder tiempo en tareas que pueden hacerse solas.</p>
+    <div class="solutions-grid">
+      {solutions.map((solution) => (
+        <div class="solution-card" data-animate>
+          <h4>{solution.title}</h4>
+          <p>{solution.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .solutions {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 5rem 2rem;
+  }
+
+  .solutions .section-title {
+    color: var(--color-white);
+  }
+
+  .solutions .section-intro {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .solution-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(230, 200, 122, 0.2);
+    padding: 1.8rem;
+    border-radius: 8px;
+    transition: all var(--transition-base);
+  }
+
+  .solution-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(230, 200, 122, 0.4);
+  }
+
+  .solution-card h4 {
+    color: var(--color-accent);
+    margin-bottom: 0.8rem;
+  }
+
+  .solution-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+
+  /* Animation delays */
+  .solution-card:nth-child(2) { transition-delay: 0.1s; }
+  .solution-card:nth-child(3) { transition-delay: 0.2s; }
+  .solution-card:nth-child(4) { transition-delay: 0.3s; }
+
+  @media (max-width: 768px) {
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .solutions {
+      padding: 3rem 1rem;
+    }
+  }
+</style>

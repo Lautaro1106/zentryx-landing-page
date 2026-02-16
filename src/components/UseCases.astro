@@ -1,0 +1,96 @@
+---
+// UseCases Component - Casos de uso reales
+const useCases = [
+  {
+    icon: '🏢',
+    title: 'Empresas de servicios',
+    description: 'Estudios contables, inmobiliarias, agencias de marketing. Automatizan la gestión de clientes, facturación y seguimiento de proyectos.'
+  },
+  {
+    icon: '🎓',
+    title: 'Centros educativos',
+    description: 'Escuelas, academias, capacitadoras. Gestionan inscripciones, envían certificados automáticos y reportes de asistencia sin trabajo manual.'
+  },
+  {
+    icon: '⚙️',
+    title: 'Comercios y distribuidoras',
+    description: 'Empresas que venden productos. Integran ventas, inventario, facturación y logística en un flujo ordenado y automático.'
+  },
+  {
+    icon: '💼',
+    title: 'Profesionales independientes',
+    description: 'Consultores, coaches, arquitectos. Automatizan agendas, propuestas comerciales y seguimiento de clientes para enfocarse en lo que saben hacer.'
+  }
+];
+---
+
+<section class="use-cases" id="casos">
+  <div class="container">
+    <h2 class="section-title">Casos reales donde ayudamos</h2>
+    <div class="use-cases-grid">
+      {useCases.map((useCase) => (
+        <div class="use-case-card" data-animate>
+          <span class="use-case-icon">{useCase.icon}</span>
+          <h3>{useCase.title}</h3>
+          <p>{useCase.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .use-cases {
+    background-color: var(--color-white);
+    padding: 5rem 2rem;
+  }
+
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+
+  .use-case-card {
+    text-align: center;
+    padding: 2rem;
+    transition: all var(--transition-base);
+  }
+
+  .use-case-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .use-case-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .use-case-card p {
+    color: var(--color-gray);
+    line-height: 1.7;
+  }
+
+  /* Animation delays */
+  .use-case-card:nth-child(2) { transition-delay: 0.1s; }
+  .use-case-card:nth-child(3) { transition-delay: 0.2s; }
+  .use-case-card:nth-child(4) { transition-delay: 0.3s; }
+
+  @media (max-width: 1024px) {
+    .use-cases-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .use-cases-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .use-cases {
+      padding: 3rem 1rem;
+    }
+  }
+</style>

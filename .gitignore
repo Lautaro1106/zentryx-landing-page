@@ -1,0 +1,25 @@
+# Archivos generados
+node_modules/
+dist/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Private Assets (Lead Magnets)
+public/guia_7_preguntas_zentryx.pdf

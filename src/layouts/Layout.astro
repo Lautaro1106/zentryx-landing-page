@@ -1,0 +1,32 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Diseño sistemas de automatización para negocios que necesitan orden, no magia." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/img/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<ClientRouter />
+	</head>
+	<body class="bg-primary text-text-light font-sans antialiased selection:bg-secondary selection:text-primary">
+		<slot />
+        <WhatsAppButton />
+	</body>
+</html>

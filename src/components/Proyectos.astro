@@ -1,0 +1,61 @@
+---
+const projects = [
+  {
+    title: "Calculadora de IVA Inmobiliaria",
+    description: "Eliminó un cuello de botella donde los agentes dependían de una sola persona. Cálculo automático y envío por mail.",
+    tags: ["HTML", "JavaScript", "Automation"]
+  },
+  {
+    title: "CRM Web Completo",
+    description: "Dashboard de gestión con roles, reportes exportables y base de datos diseñada a medida para el negocio.",
+    tags: ["PostgreSQL", "Prisma", "Nginx", "Full Stack"]
+  },
+  {
+    title: "Sistema de Certificados",
+    description: "Generación automática para una institución educativa. Un botón, cero errores, fracción del tiempo original.",
+    tags: ["Google Cloud API", "n8n", "Automation"]
+  },
+  {
+    title: "Scraper de Perfiles LinkedIn",
+    description: "Herramienta de reclutamiento para identificar candidatos en el sector inmobiliario automáticamente.",
+    tags: ["n8n", "SerpApi", "Google Cloud API"]
+  },
+  {
+    title: "Unificación de Datos",
+    description: "Consolidación de múltiples Excel dispersos en una base de datos estructurada y coherente.",
+    tags: ["Data Engineering", "SQL"]
+  }
+];
+---
+
+<section id="proyectos" class="py-24 bg-primary-light/30">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-16 text-center">Lo que construyo</h2>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map(project => (
+        <div class="group p-6 rounded-xl bg-primary border border-white/5 hover:border-secondary/50 transition-all hover:-translate-y-1 shadow-lg hover:shadow-xl">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">
+            {project.title}
+          </h3>
+          <p class="text-text-muted text-sm mb-4 line-clamp-3">
+            {project.description}
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            {project.tags.map(tag => (
+              <span class="text-xs px-2 py-1 rounded bg-black/30 text-text-muted border border-white/5">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <p class="text-sm text-text-muted">
+        * Proyectos de validación e implementaciones reales.
+      </p>
+    </div>
+  </div>
+</section>

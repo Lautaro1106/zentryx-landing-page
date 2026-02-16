@@ -1,0 +1,108 @@
+---
+// ProblemsSection Component - Grid de problemas comunes
+const problems = [
+  {
+    icon: '📊',
+    title: 'Datos dispersos',
+    description: 'La información de clientes está en Excels, formularios, mails y chats. Cuando la necesitás, no la encontrás. Y cuando la encontrás, está desactualizada.'
+  },
+  {
+    icon: '⏰',
+    title: 'Tareas manuales infinitas',
+    description: 'Pasás horas copiando información de un lado a otro. Enviando el mismo mail a cada cliente. Haciendo reportes a mano que podrían generarse solos.'
+  },
+  {
+    icon: '❌',
+    title: 'Errores evitables',
+    description: 'Un dato mal copiado genera un problema. Una factura que no se envió. Un certificado con el nombre equivocado. Errores que te cuestan tiempo, dinero y reputación.'
+  },
+  {
+    icon: '📈',
+    title: 'Creciste, pero no escalaste',
+    description: 'Cada cliente nuevo significa más trabajo manual. Más caos. Más noches hasta tarde. El crecimiento se convirtió en un problema en vez de una solución.'
+  },
+  {
+    icon: '🔄',
+    title: 'Dependencia de personas',
+    description: 'Solo una persona sabe cómo hacer ciertas tareas. Si falta, todo se frena. El conocimiento está en la cabeza de alguien, no en el sistema.'
+  },
+  {
+    icon: '📉',
+    title: 'No tenés visibilidad real',
+    description: 'No sabés cuántos clientes nuevos entraron este mes. Cuántos proyectos están atrasados. Qué servicios rinden más. Todo son suposiciones.'
+  }
+];
+---
+
+<section class="problems" id="problemas">
+  <div class="container">
+    <h2 class="section-title">El desorden que frena tu crecimiento</h2>
+    <div class="problems-grid">
+      {problems.map((problem) => (
+        <div class="problem-card" data-animate>
+          <h3>{problem.icon} {problem.title}</h3>
+          <p>{problem.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .problems {
+    background-color: var(--color-white);
+    padding: 5rem 2rem;
+  }
+
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .problem-card {
+    background-color: var(--color-bg-light);
+    border-left: 4px solid var(--color-accent);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all var(--transition-base);
+  }
+
+  .problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .problem-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .problem-card p {
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* Animation delays */
+  .problem-card:nth-child(2) { transition-delay: 0.1s; }
+  .problem-card:nth-child(3) { transition-delay: 0.2s; }
+  .problem-card:nth-child(4) { transition-delay: 0.3s; }
+  .problem-card:nth-child(5) { transition-delay: 0.4s; }
+  .problem-card:nth-child(6) { transition-delay: 0.5s; }
+
+  @media (max-width: 1024px) {
+    .problems-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .problems-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .problems {
+      padding: 3rem 1rem;
+    }
+  }
+</style>

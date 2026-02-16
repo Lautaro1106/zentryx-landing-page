@@ -1,0 +1,100 @@
+---
+// Process Component - Cómo trabaja Zentryx
+const steps = [
+  {
+    number: 1,
+    title: 'Entendemos tu negocio',
+    description: 'Nos reunimos con vos para entender qué hacés, cómo lo hacés y dónde están los puntos de dolor. No vendemos antes de entender.'
+  },
+  {
+    number: 2,
+    title: 'Diseñamos la solución',
+    description: 'Armamos una propuesta clara que resuelve tus problemas específicos. Te mostramos qué tareas se van a automatizar, qué sistemas se van a integrar y qué resultados esperamos.'
+  },
+  {
+    number: 3,
+    title: 'Implementamos y acompañamos',
+    description: 'Construimos la solución, la ponemos en marcha y capacitamos a tu equipo. No te dejamos solo después de la entrega. Te acompañamos hasta que funcione de verdad.'
+  }
+];
+---
+
+<section class="process" id="proceso">
+  <div class="container">
+    <h2 class="section-title">Cómo trabajamos</h2>
+    <div class="process-steps">
+      {steps.map((step) => (
+        <div class="process-step" data-animate>
+          <div class="step-number">{step.number}</div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process {
+    background-color: var(--color-bg-light);
+    padding: 5rem 2rem;
+  }
+
+  .process .container {
+    max-width: var(--container-narrow);
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    transition: all var(--transition-base);
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .step-content p {
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* Animation delays */
+  .process-step:nth-child(2) { transition-delay: 0.15s; }
+  .process-step:nth-child(3) { transition-delay: 0.3s; }
+
+  @media (max-width: 768px) {
+    .process-step {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .process {
+      padding: 3rem 1rem;
+    }
+  }
+</style>
