@@ -1,0 +1,9 @@
+{
+    "providers": [
+        "node"
+    ],
+    "nixPkgs": [
+        "nodejs_20",
+        "npm"
+    ]
+}
