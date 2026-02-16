@@ -21,5 +21,4 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# Private Assets (Lead Magnets)
-public/guia_7_preguntas_zentryx.pdf
+
